@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CV Portofolio</title>
+    <style>
+        /* ===== Style CSS gabungan ===== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #2c3e50;
+            padding: 15px 40px;
+            border-radius: 10px 10px 0 0;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar .logo {
+            color: #ecf0f1;
+            font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            user-select: none;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .navbar ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            color: #ecf0f1;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #ecf0f1;
+            margin-bottom: 25px;
+        }
+
+        .header img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #2980b9;
+            margin-bottom: 15px;
+            box-shadow: 0 0 15px rgba(41, 128, 185, 0.5);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            letter-spacing: 1.2px;
+        }
+
+        .header p {
+            font-size: 1rem;
+            color: #7f8c8d;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            color: #2980b9;
+            border-left: 5px solid #2980b9;
+            padding-left: 12px;
+            margin-bottom: 15px;
+        }
+
+        .section ul {
+            list-style: disc inside;
+            color: #34495e;
+            font-size: 1.1rem;
+        }
+
+        .section ul li {
+            margin-bottom: 8px;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            color: #34495e;
+        }
+
+        /* Kontak */
+        .section p br {
+            line-height: 1.8;
+        }
+
+        /* Portofolio khusus */
+        #portofolio img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        #portofolio p {
+            font-style: italic;
+            color: #555;
+            margin-top: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            .navbar ul {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">MY CV</div>
+        <ul>
+            <li><a href="#deskripsi">Tentang</a></li>
+            <li><a href="#pendidikan">Pendidikan</a></li>
+            <li><a href="#organisasi">Organisasi</a></li>
+            <li><a href="#prestasi">Prestasi</a></li>
+            <li><a href="#kemampuan">Kemampuan</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+            <li><a href="#portofolio">Portofolio</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <!-- Header -->
+        <div class="header">
+            <img src="fotosepti.jpeg" alt="Foto Profil">
+            <h1>Nama Lengkap</h1>
+            <p>Email: email@gmail.com | HP: 08xxxxxxxxxx</p>
+        </div>
+
+        <!-- Deskripsi Diri -->
+        <div class="section" id="deskripsi">
+            <h2>Deskripsi Diri</h2>
+            <p>Halo, nama saya Septiana Eka Wijayanti. Saya adalah seorang pelajar di SMKN 1 Bawang, jurusan Pengembangan Perangkat Lunak dan Gim. Saya memiliki minat yang tinggi dalam belajar dan mengembangkan kemampuan diri, terutama di bidang teknologi, desain, dan kreativitas digital.</p>
+        </div>
+
+        <!-- Pendidikan -->
+        <div class="section" id="pendidikan">
+            <h2>Pendidikan</h2>
+            <ul>
+                <li>SMKN 1 Bawang - Pengembangan perangkat lunak dan gim (2025 - Sekarang)</li>
+                <li>MTs Cokroaminoto Tanjungtirta (2022 - 2025)</li>
+                <li>MI Cokroaminoto Tanjungtirta (2016 - 2022)</li>
+            </ul>
+        </div>
+
+        <!-- Pengalaman Organisasi -->
+        <div class="section" id="organisasi">
+            <h2>Pengalaman Organisasi</h2>
+            <ul>
+                <li>MTs = Menjadi anggota Sepmi 2024-2025</li>
+                <li>MTs = Mengikuti Ekstrakuler Pramuka</li>
+                <li>MTs = Mengikuti Ekstrakuler Drumband</li>
+            </ul>
+        </div>
+
+        <!-- Prestasi -->
+        <div class="section" id="prestasi">
+            <h2>Prestasi</h2>
+            <ul>
+                <li>-</li>
+            </ul>
+        </div>
+
+        <!-- Kemampuan -->
+        <div class="section" id="kemampuan">
+            <h2>Kemampuan</h2>
+            <ul>
+                <li>Microsoft Office</li>
+                <li>Canva</li>
+                <li>Kerja Tim</li>
+                <li>Desain Grafis (Canva/CorelDraw)</li>
+                <li>Figma</li>
+                <li>Word</li>
+                <li>Excel</li>
+            </ul>
+        </div>
+
+        <!-- Kontak -->
+        <div class="section" id="kontak">
+            <h2>Kontak</h2>
+            <p>
+                Email: 20379@pplg.smkn1bawang.sch.id<br>
+                No HP: 08xxxxxxxxxx<br>
+                Instagram: @ssvilerqueen26<br>
+                Alamat: Punggelan, Banjarnegara, Tanjungtirta Rt04/Rw02 Jawa Tengah
+            </p>
+        </div>
+
+        <!-- Portofolio -->
+        <div class="section" id="portofolio">
+            <h2>Portofolio</h2>
+            <img src="fotoportofolio.png" alt="Foto Portofolio">
+            <p>Desain UI website menggunakan Figma untuk project sekolah</p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
