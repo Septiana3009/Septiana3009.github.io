@@ -1,263 +1,1631 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-    <meta charset="UTF-8">
-    <title>CV Portofolio</title>
-    <style>
-        /* ===== Style CSS gabungan ===== */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
 
-        body {
-            background-color: #f0f2f5;
-            color: #333;
-            line-height: 1.6;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            background: #fff;
-            padding: 30px 40px;
-            border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        }
+<title>Website Desa Tanjungtirta - Vivid Purple Banner</title>
 
-        /* Navbar */
-        .navbar {
-            background-color: #2c3e50;
-            padding: 15px 40px;
-            border-radius: 10px 10px 0 0;
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        .navbar .logo {
-            color: #ecf0f1;
-            font-weight: 700;
-            font-size: 1.5rem;
-            letter-spacing: 2px;
-            user-select: none;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght=400;600;700;800&family=Inter:wght=400;500;600&display=swap" rel="stylesheet">
 
-        .navbar ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        .navbar ul li a {
-            color: #bdc3c7;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
+<style>
+    /* 1. Import Font Keren dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@700;800&display=swap');
 
-        .navbar ul li a:hover {
-            color: #ecf0f1;
-            border-bottom: 2px solid #ecf0f1;
-        }
+/* 2. Terapkan Font ke Judul dan Deskripsi */
+#statistik h1, 
+.page-section h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
 
-        /* Header */
-        .header {
-            text-align: center;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #ecf0f1;
-            margin-bottom: 25px;
-        }
+#statistik p, 
+.page-section p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    opacity: 0.9;
+}
 
-        .header img {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #2980b9;
-            margin-bottom: 15px;
-            box-shadow: 0 0 15px rgba(41, 128, 185, 0.5);
-        }
+/* 3. Animasi Efek Mengetik untuk Tulisan "Desa Tanjungtirta" */
+.typing-text {
+    display: inline-block;
+    border-right: 3px solid #ff00c8; /* Warna kursor ketik menyesuaikan aksen */
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3.5s steps(30, end) infinite alternate, blink-caret 0.75s step-end infinite;
+}
 
-        .header h1 {
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 5px;
-            letter-spacing: 1.2px;
-        }
+/* 4. Animasi Muncul Perlahan untuk Teks Deskripsi di Bawahnya */
+.animate-fade {
+    animation: fadeInUp 1.2s ease-out forwards;
+}
 
-        .header p {
-            font-size: 1rem;
-            color: #7f8c8d;
-        }
+/* --- Kumpulan Elemen Keyframes Animasi --- */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
 
-        /* Sections */
-        .section {
-            margin-bottom: 30px;
-        }
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #ff00c8; }
+}
 
-        .section h2 {
-            font-size: 1.8rem;
-            color: #2980b9;
-            border-left: 5px solid #2980b9;
-            padding-left: 12px;
-            margin-bottom: 15px;
-        }
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        .section ul {
-            list-style: disc inside;
-            color: #34495e;
-            font-size: 1.1rem;
-        }
+/* =========================
+ROOT (PALET WARNA BARU: VIVID & NEON PURPLE)
+========================= */
+:root{
+    --primary:#b026ff;     /* Bright / Vivid Purple */
+    --secondary:#d896ff;   /* Bright Lavender */
+    --accent:#ff00ff;      /* Neon Purple / Magenta */
+    --accent-light:#f9e6ff;/* Light Electric Violet Tint */
+    --light:#ffffff;
+    --dark:#1a0033;        /* Deep Royal Purple (Teks & Kontras) */
+    --soft:#f6ebff;        /* Soft Purple Glow Background */
+}
 
-        .section ul li {
-            margin-bottom: 8px;
-        }
+/* =========================
+RESET & LAYOUT SYSTEM
+========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .section p {
-            font-size: 1.1rem;
-            color: #34495e;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        /* Kontak */
-        .section p br {
-            line-height: 1.8;
-        }
+body{
+    font-family:'Inter',sans-serif;
+    background:linear-gradient(135deg, #ffffff, #fcf5ff, #f6ebff);
+    background-size:400% 400%;
+    animation:bgMove 10s ease infinite;
+    color:var(--dark);
+    overflow-x:hidden;
+}
 
-        /* Portofolio khusus */
-        #portofolio img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 15px;
-            display: block;
-        }
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+}
 
-        #portofolio p {
-            font-style: italic;
-            color: #555;
-            margin-top: 0;
-        }
+@keyframes bgMove{
+    0%{ background-position:0% 50%; }
+    50%{ background-position:100% 50%; }
+    100%{ background-position:0% 50%; }
+}
 
-        /* Responsive */
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-            }
+.page-section {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-in-out;
+    padding: 60px 0;
+}
 
-            .navbar {
-                flex-direction: column;
-                gap: 10px;
-                padding: 15px 20px;
-            }
+/* Khusus beranda, padding atas dihilangkan karena ada hero banner besar */
+#beranda.page-section {
+    padding-top: 0 !important;
+}
 
-            .navbar ul {
-                flex-direction: column;
-                gap: 10px;
-                width: 100%;
-                text-align: center;
-            }
-        }
-    </style>
+.page-section.active-section {
+    display: block !important;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+TOPBAR & NAVBAR
+========================= */
+.topbar{
+    background:linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
+    background-size:300% 300%;
+    animation:gradientMove 4s ease infinite;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.custom-navbar{
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(20px);
+    border-bottom:3px solid var(--accent-light);
+    padding:16px 0;
+    transition:0.3s;
+}
+
+.custom-navbar .nav-link{
+    color:var(--dark)!important;
+    font-weight:700;
+    padding:10px 22px;
+    border-radius:30px;
+    transition:0.3s;
+    cursor: pointer;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+.custom-navbar .nav-link:hover{
+    color:white!important;
+    background:linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+.custom-navbar .nav-link.active{
+    background:linear-gradient(135deg, var(--primary), var(--accent));
+    color:white!important;
+    box-shadow:0 8px 20px rgba(176, 38, 255, 0.3);
+}
+
+/* ==================================
+HERO BANNER (TULISAN DI ATAS FOTO)
+================================== */
+.hero-banner-full {
+    position: relative;
+    width: 100%;
+    height: 650px; /* Tinggi foto besar di beranda */
+    background: url('desa/bg.jpeg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+/* Overlay gelap transparan agar tulisan jelas terbaca */
+.hero-banner-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(26, 0, 51, 0.75), rgba(26, 0, 51, 0.6));
+    z-index: 1;
+}
+
+.hero-banner-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 850px;
+    padding: 0 20px;
+}
+
+.hero-banner-content h1 {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* Efek teks gradasi ungu neon khusus untuk hiasan banner */
+.hero-banner-content h1 span {
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-banner-content p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.service-pill-card {
+    background: white; border-radius: 28px; padding: 26px;
+    box-shadow: 0 10px 30px rgba(176, 38, 255, 0.05); transition: all 0.3s ease;
+    cursor: pointer; text-align: center; height: 100%;
+    border: 2px solid transparent;
+}
+.service-pill-card:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 20px 40px rgba(255, 0, 255, 0.15); 
+    border-color: var(--accent);
+}
+.service-icon-box {
+    width: 68px; height: 68px; border-radius: 22px; background: var(--soft);
+    display: flex; align-items: center; justify-content: center; margin: 0 auto 18px auto; font-size: 28px; transition: 0.3s;
+}
+.service-pill-card:hover .service-icon-box { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; }
+
+/* ==================================
+PROFIL DESA STYLE (PEMBARUAN PEMISAHAN)
+================================== */
+.profile-media-card {
+    position: relative;
+    border-radius: 36px;
+    overflow: hidden;
+    box-shadow: 0 25px 45px rgba(176, 38, 255, 0.1);
+}
+.profile-media-card img { width: 100%; height: 450px; object-fit: cover; }
+.profile-floating-badge {
+    position: absolute;
+    bottom: 25px; left: 25px; right: 25px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    padding: 22px;
+    border-radius: 24px;
+    border: 2px solid var(--accent);
+}
+
+.history-timeline { position: relative; border-left: 3px solid var(--primary); padding-left: 35px; margin-left: 15px; }
+.history-block { position: relative; margin-bottom: 35px; }
+.history-block::before {
+    content: '⚡';
+    position: absolute; left: -46px; top: 12px;
+    font-size: 18px;
+}
+.history-card { background: white; border-radius: 24px; padding: 26px; box-shadow: 0 10px 25px rgba(0,0,0,0.02); border: 1px solid var(--accent-light); }
+
+/* Visi Misi Premium Box Layout */
+.vision-premium-box {
+    background: linear-gradient(135deg, var(--primary), var(--dark));
+    color: white; border-radius: 36px; padding: 45px; position: relative; overflow: hidden;
+    box-shadow: 0 20px 40px rgba(176, 38, 255, 0.25);
+}
+.vision-quote {
+    font-size: 26px; font-weight: 700; line-height: 1.6;
+    background: linear-gradient(90deg, #ffffff, var(--secondary));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+.mission-grid-card {
+    background: white; border-radius: 24px; padding: 28px; height: 100%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.01); transition: all 0.3s ease;
+    border: 2px solid var(--soft);
+}
+.mission-grid-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(255, 0, 255, 0.15);
+    border-color: var(--accent);
+}
+.mission-number {
+    width: 42px; height: 42px; border-radius: 14px;
+    background: var(--primary); color: white;
+    display: flex; align-items: center; justify-content: center; font-weight: 700; margin-bottom: 18px;
+}
+
+/* =========================
+SECTION TITLE & CARDS
+========================= */
+.section-title{
+    text-align:center; margin-bottom: 50px; font-weight:800; font-size:36px;
+    background:linear-gradient(90deg, var(--dark), var(--primary), var(--accent));
+    background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+.section-title::after{
+    content:'⚡'; display:block; text-align:center; font-size: 22px; margin-top: 10px;
+}
+
+.card{
+    border:none; border-radius:28px; overflow:hidden; background:white;
+    transition:0.3s ease; box-shadow: 0 12px 30px rgba(176,38,255,0.05);
+}
+.card:hover{ transform: translateY(-8px); box-shadow: 0 25px 45px rgba(255,0,255,0.15); }
+.card img{ height:230px; object-fit:cover; }
+.card-body{ padding:30px; }
+
+/* ==================================
+UMKM PAGE CUSTOM STYLES
+================================== */
+.search-container {
+    max-width: 650px;
+    margin: 0 auto 50px auto;
+}
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.search-input {
+    width: 100%;
+    padding: 16px 25px 16px 55px;
+    border: 3px solid var(--soft);
+    border-radius: 50px;
+    background: white;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--dark);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(176,38,255,0.03);
+}
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 15px 30px rgba(176,38,255,0.15);
+}
+.search-icon-inside {
+    position: absolute;
+    left: 22px;
+    font-size: 20px;
+    color: var(--primary);
+}
+.umkm-badge-type {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 30px;
+    background-color: var(--soft);
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+.umkm-meta-info {
+    font-size: 13px;
+    color: #6c757d;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 10px;
+}
+.btn-umkm-detail {
+    background: var(--soft);
+    color: var(--primary);
+    border: none;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 15px;
+}
+.btn-umkm-detail:hover {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    box-shadow: 0 5px 15px rgba(176,38,255,0.3);
+}
+
+/* STYLING CUSTOM UNTUK POP-UP MODAL */
+.modal-content {
+    border-radius: 32px;
+    border: none;
+    box-shadow: 0 25px 50px rgba(26, 0, 51, 0.3);
+    overflow: hidden;
+}
+.modal-header-gradient {
+    background: linear-gradient(135deg, var(--primary), var(--dark));
+    color: white;
+    padding: 25px 30px;
+    border-bottom: none;
+}
+.modal-body-custom {
+    padding: 35px 30px;
+}
+.modal-close-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    opacity: 1;
+}
+
+/* ==================================
+ORGANISASI
+================================== */
+.org-card-modern {
+    background: white; border-radius: 28px; padding: 30px 22px; text-align: center; 
+    box-shadow: 0 10px 25px rgba(176,38,255,0.04);
+    transition: all 0.3s ease; height: 100%;
+    border: 2px solid var(--soft);
+}
+.org-card-modern:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(255,0,255,0.1); border-color: var(--primary); }
+.org-avatar-wrap { width: 96px; height: 96px; margin: 0 auto 18px auto; }
+.org-avatar {
+    width: 100%; height: 100%; border-radius: 26px; background: var(--accent-light);
+    display: flex; align-items: center; justify-content: center; font-size: 38px;
+    box-shadow: 0 8px 15px rgba(176,38,255,0.1);
+}
+.org-badge { display: inline-block; padding: 6px 18px; font-size: 11px; font-weight: 700; border-radius: 50px; margin-bottom: 14px; color: white; }
+.badge-kades { background: var(--primary); }
+.badge-sekdes { background: var(--accent); }
+.badge-kaur { background: #8a2be2; }
+.badge-kasi { background: #9400d3; }
+.badge-kadus { background: #4b0082; }
+.org-name { font-size: 16px; font-weight: 700; color: var(--dark); }
+
+/* =========================
+STATISTIK
+========================= */
+.stat-box{
+    background: white; border-radius:28px; padding:38px 25px; text-align:center; 
+    transition:all 0.3s ease; box-shadow: 0 12px 30px rgba(0,0,0,0.02);
+    border: 2px solid var(--soft);
+}
+.stat-box:hover { transform: scale(1.05); border-color: var(--accent); }
+.stat-box h1{ font-size:54px; font-weight:800; background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.stat-badge-icon { width: 60px; height: 60px; border-radius: 20px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 15px; font-size: 26px; }
+
+.btn-toggle-stat { border: 2px solid var(--primary); background: white; color: var(--primary); font-weight: 700; padding: 11px 26px; border-radius: 30px; transition: all 0.3s; font-size: 14px; }
+.btn-toggle-stat:hover, .btn-toggle-stat.active { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white !important; border-color: transparent; box-shadow: 0 8px 20px rgba(255,0,255,0.2); }
+
+.custom-progress-container { background: white; border-radius: 28px; }
+.stat-view-pane { display: none; animation: fadeIn 0.4s ease forwards; }
+.stat-view-pane.active-pane { display: block; }
+
+@keyframes fadeIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
+
+/* GALERI & PETA */
+.gallery img, .gallery video{ height:250px; object-fit:cover; width:100%; border-radius: 20px; }
+
+/* ==================================
+CONTACT STYLE
+================================== */
+.contact-info-card {
+    background: linear-gradient(135deg, var(--primary), var(--dark));
+    color: white; border-radius: 36px; padding: 45px; height: 100%;
+    box-shadow: 0 20px 40px rgba(176,38,255,0.15);
+}
+.contact-item-row { display: flex; align-items: flex-start; margin-top: 24px; }
+.contact-icon-sphere {
+    width: 50px; height: 50px; background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-right: 18px; flex-shrink: 0;
+}
+
+.modern-complaint-form {
+    background: white; padding: 45px; border-radius: 36px;
+    box-shadow: 0 20px 40px rgba(176,38,255,0.04);
+    border: 1px solid var(--soft);
+}
+.modern-complaint-form .form-label { font-weight: 700; color: var(--dark); font-size: 14px; margin-bottom: 8px; }
+.modern-complaint-form .form-control {
+    border: 2px solid var(--soft); border-radius: 16px;
+    padding: 14px 20px; background: var(--soft);
+    color: var(--dark); font-size: 15px; transition: all 0.3s;
+}
+.modern-complaint-form .form-control:focus {
+    background: white; border-color: var(--accent); box-shadow: 0 0 0 4px rgba(255,0,255,0.15);
+}
+.btn-gradient-submit {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white; border: none; border-radius: 50px; padding: 15px 30px;
+    font-weight: 700; font-size: 16px; box-shadow: 0 10px 25px rgba(255,0,255,0.25);
+    transition: all 0.3s; width: 100%;
+}
+.btn-gradient-submit:hover {
+    transform: translateY(-3px); box-shadow: 0 15px 30px rgba(255,0,255,0.35); color: white;
+}
+
+.btn-custom {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white; font-weight: 700; border-radius: 50px; padding: 14px 34px; border: none; transition: 0.3s;
+    box-shadow: 0 8px 20px rgba(176,38,255,0.2);
+}
+.btn-custom:hover {
+    transform: translateY(-3px); box-shadow: 0 12px 25px rgba(255,0,255,0.3); color: white;
+}
+
+/* FOOTER */
+footer{
+    background: var(--dark);
+    color:rgba(255,255,255,0.6); padding:35px; text-align:center; margin-top: 60px; font-size: 14px;
+    border-top: 4px solid var(--accent);
+}
+
+@media(max-width:991px){
+    .hero-banner-full { height: 500px; }
+    .hero-banner-content h1 { font-size: 36px; }
+    .hero-banner-content p { font-size: 15px; }
+    .profile-media-card img { height: 360px; }
+}
+
+</style>
 </head>
-
 <body>
 
-    <nav class="navbar">
-        <div class="logo">MY CV</div>
-        <ul>
-            <li><a href="#deskripsi">Tentang</a></li>
-            <li><a href="#pendidikan">Pendidikan</a></li>
-            <li><a href="#organisasi">Organisasi</a></li>
-            <li><a href="#prestasi">Prestasi</a></li>
-            <li><a href="#kemampuan">Kemampuan</a></li>
-            <li><a href="#kontak">Kontak</a></li>
-            <li><a href="#portofolio">Portofolio</a></li>
-        </ul>
-    </nav>
+<div class="topbar text-white py-3">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 d-flex align-items-center justify-content-center justify-content-md-start">
+                <span style="font-size: 28px; margin-right: 12px;">🏡</span>
+                <div>
+                    <h5 class="mb-0 fw-bold" style="letter-spacing: 0.5px;">Desa Tanjungtirta</h5>
+                    <small style="opacity: 0.9; font-size: 11px;">Kec. Punggelan, Kab. Banjarnegara, Prov. Jawa Tengah</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg sticky-top custom-navbar">
+    <div class="container">
+        <a class="navbar-brand fw-bold" style="color:var(--primary); font-size: 22px;" onclick="switchSection('beranda')">⚡ Tanjungtirta</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar" style="border: none;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="menuNavbar">
+            <ul class="navbar-nav nav-pills gap-1 mt-3 mt-lg-0">
+                <li class="nav-item"><a class="nav-link active" onclick="switchSection('beranda')">BERANDA</a></li>
+                <li class="nav-item"><a class="nav-link" onclick="switchSection('profil')">PROFIL DESA</a></li>
+                <li class="nav-item"><a class="nav-link" onclick="switchSection('organisasi')">ORGANISASI</a></li>
+                <li class="nav-item"><a class="nav-link" onclick="switchSection('statistik')">STATISTIK</a></li>
+                <li class="nav-item"><a class="nav-link" onclick="switchSection('umkm')">UMKM</a></li>
+                <li class="nav-item"><a class="nav-link" onclick="switchSection('galeri')">GALERI</a></li>
+                <li class="nav-item"><a class="nav-link" onclick="switchSection('kontak')">KONTAK</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="beranda" class="page-section active-section">
+    
+    <section class="hero-banner-full text-center">
+        <div class="hero-banner-overlay"></div>
+        <div class="hero-banner-content">
+            <h1>Satu Portal untuk <br><span>Desa Tanjungtirta</span> ⚡</h1>
+            <p class="animate-fade"></p>
+            <p>Kemudahan layanan administrasi di tangan Anda, keterbukaan informasi tata kelola pemerintahan, dan ruang tumbuh UMKM lokal.</p>
+            <div>
+                <button class="btn btn-custom btn-lg me-2 px-4" onclick="switchSection('profil')">Jelajahi Profil</button>
+                <button class="btn btn-outline-light rounded-5 px-4 py-2 fw-bold" style="border: 2px solid white;" onclick="switchSection('kontak')">Hubungi Kami</button>
+            </div>
+        </div>
+    </section>
 
     <div class="container">
-
-        <!-- Header -->
-        <div class="header">
-            <img src="fotosepti.jpeg" alt="Foto Profil">
-            <h1>Septiana Eka Wijayanti</h1>
-            <p>Email: email@gmail.com | HP: 08xxxxxxxxxx</p>
+        <div class="my-5">
+            <h4 class="fw-bold mb-4 text-center text-lg-start" style="color:var(--dark);">⚡ Akses Layanan Cepat</h4>
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="service-pill-card" onclick="switchSection('kontak')">
+                        <div class="service-icon-box">📝</div>
+                        <h6 class="fw-bold text-dark mb-1">Aduan & Surat</h6>
+                        <small class="text-muted d-none d-md-inline">Pengurusan berkas digital</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="service-pill-card" onclick="switchSection('organisasi')">
+                        <div class="service-icon-box">🏛️</div>
+                        <h6 class="fw-bold text-dark mb-1">Aparat Desa</h6>
+                        <small class="text-muted d-none d-md-inline">Struktur kepengurusan</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="service-pill-card" onclick="switchSection('statistik')">
+                        <div class="service-icon-box">📊</div>
+                        <h6 class="fw-bold text-dark mb-1">Data Statistik</h6>
+                        <small class="text-muted d-none d-md-inline">Grafik demografi riil</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="service-pill-card" onclick="switchSection('umkm')">
+                        <div class="service-icon-box">🛍️</div>
+                        <h6 class="fw-bold text-dark mb-1">Produk UMKM</h6>
+                        <small class="text-muted d-none d-md-inline">Karya & Kuliner lokal</small>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- Deskripsi Diri -->
-        <div class="section" id="deskripsi">
-            <h2>Deskripsi Diri</h2>
-            <p>Halo, nama saya Septiana Eka Wijayanti. Saya adalah seorang pelajar di SMKN 1 Bawang, jurusan Pengembangan Perangkat Lunak dan Gim. Saya memiliki minat yang tinggi dalam belajar dan mengembangkan kemampuan diri, terutama di bidang teknologi, desain, dan kreativitas digital.</p>
+        <div class="mt-5 pt-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h4 class="fw-bold mb-0" style="color:var(--dark);">💥 Kabar Desa Terbaru</h4>
+                <button class="btn btn-sm btn-light rounded-5 fw-bold px-3 py-2" style="background-color: var(--accent-light); color: var(--primary) !important;" onclick="switchSection('galeri')">Lihat Galeri →</button>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="p-3">
+                            <div class="rounded-4 overflow-hidden position-relative">
+                                <img src="desa/Kop.jpg" class="w-100" style="height:180px; object-fit:cover;">
+                                <span class="position-absolute top-0 end-0 text-white text-uppercase fs-6 fw-bold px-3 py-1 m-2 rounded-5" style="font-size:10px !important; background: var(--primary); letter-spacing: 0.5px;">Ekonomi</span>
+                            </div>
+                        </div>
+                        <div class="card-body pt-0 px-4 pb-4">
+                            <h6 class="fw-bold text-dark mb-2" style="line-height: 1.4;">Pembangunan Koperasi Merah Putih Di Desa Tanjungtirta</h6>
+                            <p class="text-muted small mb-0">Mendukung aktivitas ekonomi warga, pembangunan gedung Koperasi Desa/Kelurahan Merah Putih di Desa Tanjungtirta memasuki tahap penyempurnaan struktur dan pengecatan dengan didampingi Babinsa Punggelan.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="p-3">
+                            <div class="rounded-4 overflow-hidden position-relative">
+                                <img src="desa/wisata.jpeg" class="w-100" style="height:180px; object-fit:cover;">
+                                <span class="position-absolute top-0 end-0 text-white text-uppercase fs-6 fw-bold px-3 py-1 m-2 rounded-5" style="font-size:10px !important; background: var(--accent); letter-spacing: 0.5px;">Wisata</span>
+                            </div>
+                        </div>
+                        <div class="card-body pt-0 px-4 pb-4">
+                            <h6 class="fw-bold text-dark mb-2" style="line-height: 1.4;">Kolam Cinta Petuguran Jadi Pilihan Liburan Warga Tanjungtirta</h6>
+                            <p class="text-muted small mb-0">Hanya berjarak beberapa menit dari Tanjungtirta, pesona wisata air alami Kolam Cinta Petuguran menjadi salah satu destinasi favorit warga lokal untuk menghabiskan waktu libur akhir pekan bersama keluarga.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 d-md-none d-lg-block">
+                    <div class="card h-100">
+                        <div class="p-3">
+                            <div class="rounded-4 overflow-hidden position-relative">
+                                <img src="desa/sawah.jpg" class="w-100" style="height:180px; object-fit:cover;">
+                                <span class="position-absolute top-0 end-0 text-white text-uppercase fs-6 fw-bold px-3 py-1 m-2 rounded-5" style="font-size:10px !important; background: var(--secondary); color: var(--dark) !important; letter-spacing: 0.5px;">Pertanian</span>
+                            </div>
+                        </div>
+                        <div class="card-body pt-0 px-4 pb-4">
+                            <h6 class="fw-bold text-dark mb-2" style="line-height: 1.4;">Gerakan Pemuda Desa Tanjungtirta Jalankan Inovasi Pertanian Organik</h6>
+                            <p class="text-muted small mb-0">PPemuda Tanjungtirta mulai beralih ke pertanian organik. Mereka mengganti pupuk kimia dengan pupuk kompos buatan sendiri, hasil pelatihan dari program penyuluhan pertanian. Selain ramah lingkungan, metode ini juga meningkatkan kesuburan tanah. Ke depan, desa ini berambisi menjadi pelopor pertanian sehat berbasis kemandirian lokal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+</div>
 
-        <!-- Pendidikan -->
-        <div class="section" id="pendidikan">
-            <h2>Pendidikan</h2>
-            <ul>
-                <li>SMKN 1 Bawang - Pengembangan perangkat lunak dan gim (2025 - Sekarang)</li>
-                <li>MTs Cokroaminoto Tanjungtirta (2022 - 2025)</li>
-                <li>MI Cokroaminoto Tanjungtirta (2016 - 2022)</li>
-            </ul>
-        </div>
+<div class="container">
 
-        <!-- Pengalaman Organisasi -->
-        <div class="section" id="organisasi">
-            <h2>Pengalaman Organisasi</h2>
-            <ul>
-                <li>MTs = Menjadi anggota Sepmi 2024-2025</li>
-                <li>MTs = Mengikuti Ekstrakuler Pramuka</li>
-                <li>MTs = Mengikuti Ekstrakuler Drumband</li>
-            </ul>
-        </div>
+    <div id="profil" class="page-section">
+        <section>
+            <h2 class="section-title">Profil & Histori Desa</h2>
+            
+            <div class="row g-5 align-items-center mb-5 pb-5 border-bottom" style="border-color: var(--accent-light) !important;">
+                <div class="col-lg-6">
+                    <div class="profile-media-card">
+                        <img src="desa/bg.jpeg" alt="Pemandangan Desa Tanjungtirta">
+                        <div class="profile-floating-badge">
+                            <h5 class="fw-bold text-dark mb-1">💥 Wilayah Agrikultur</h5>
+                            <p class="text-muted small mb-0">Menjaga kelestarian alam dan ketahanan pangan lokal.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="fw-bold mb-4" style="color: var(--primary);">⚡ Geografis & Histori</h3>
+                    <div class="history-timeline">
+                        <div class="history-block">
+                            <div class="history-card">
+                                <h6 class="fw-bold text-dark mb-1">Asal-Usul Nama & Sejarah</h6>
+                                <p class="text-muted small mb-0">Sejarah Desa TanjungtirtaZaman dulu, wilayah Desa Tanjungtirta masih berupa hutan lebat di daerah perbukitan yang dikelilingi oleh aliran Sungai Pekacangan, hingga datanglah para pendatang pertama yang dipimpin oleh sosok leluhur sakti bernama Ki Ageng Penjawi untuk melakukan babad alas atau membuka lahan guna dijadikan tempat tinggal, tempat syiar Islam, dan area pertanian sawah tradisional. Nama Tanjungtirta sendiri dipilih dari kata "Tanjung" yang berarti daratan tinggi yang menonjol dan "Tirta" yang berarti air, yang terinspirasi dari kisah mistis robohnya sebuah pohon tanjung raksasa sakti setelah dialiri air sungai, serta letak geografis desa yang berada di atas bukit namun kaya akan sumber air. Karena letaknya yang strategis di perbatasan wilayah dengan jalur jalan berbelok-belok tajam di perbukitan curam yang kemudian memunculkan nama Dusun Dogleg, pemukiman ini cepat ramai hingga akhirnya resmi dibentuk menjadi sebuah desa definitif yang kini menaungi enam dusun, yaitu Siwaru, Siwalan, Menggora, Dogleg, Bengkat A, dan Bengkat B. Seiring berjalannya waktu, desa ini berkembang menjadi daerah pertanian maju yang terkenal dengan hasil bumi seperti buah salak, duku, dan kapulaga, di mana masyarakat agrarisnya hidup makmur serta terus merawat sejarah leluhur mereka melalui tradisi upacara adat Suran atau bersih desa tahunan secara kompak dan gotong royong.</p>
+                            </div>
+                        </div>
+                        <div class="history-block">
+                            <div class="history-card">
+                                <h6 class="fw-bold text-dark mb-1">Kondisi Demografis Wilayah</h6>
+                                <p class="text-muted small mb-0">Berada di wilayah strategis Kecamatan Punggelan, Banjarnegara, Desa Tanjungtirta memiliki kondisi demografi yang didominasi oleh masyarakat sektor agraris. Mayoritas dari total 4.791 jiwa penduduk desa menggantungkan hidup mereka pada hasil alam. Hal ini terlihat dari pemanfaatan sebagian besar lahan desa yang dikelola secara optimal menjadi perkebunan rakyat dan area persawahan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Prestasi -->
-        <div class="section" id="prestasi">
-            <h2>Prestasi</h2>
-            <ul>
-                <li>-</li>
-            </ul>
-        </div>
-
-        <!-- Kemampuan -->
-        <div class="section" id="kemampuan">
-            <h2>Kemampuan</h2>
-            <ul>
-                <li>Microsoft Office</li>
-                <li>Canva</li>
-                <li>Kerja Tim</li>
-                <li>Desain Grafis (Canva/CorelDraw)</li>
-                <li>Figma</li>
-                <li>Word</li>
-                <li>Excel</li>
-            </ul>
-        </div>
-
-        <!-- Kontak -->
-        <div class="section" id="kontak">
-            <h2>Kontak</h2>
-            <p>
-                Email: 20379@pplg.smkn1bawang.sch.id<br>
-                No HP: 08xxxxxxxxxx<br>
-                Instagram: @ssvilerqueen26<br>
-                Alamat: Punggelan, Banjarnegara, Tanjungtirta Rt04/Rw02 Jawa Tengah
-            </p>
-        </div>
-
-        <!-- Portofolio -->
-        <div class="section" id="portofolio">
-            <h2>Portofolio</h2>
-            <img src="fotoportofolio.png" alt="Foto Portofolio">
-            <p>Desain UI website menggunakan Figma untuk project sekolah</p>
-        </div>
-
+            <h2 class="section-title mt-4">Visi dan Misi Utama</h2>
+            <div class="row g-4 align-items-stretch">
+                <div class="col-lg-5">
+                    <div class="vision-premium-box h-100 d-flex flex-column justify-content-center">
+                        <span class="text-uppercase fw-bold small mb-2" style="letter-spacing: 1px; color: var(--accent);">Visi Desa Tanjungtirta ⚡</span>
+                        <p class="vision-quote">"Bersama-sama masyarakat menuju desa yang Baldatun Thayyibatun Wa Rabbun Ghafur."</p>
+                        <p class="small text-white-50 mt-3 mb-0">— Mewujudkan tata kehidupan yang mandiri, makmur, aman, dan penuh keberkahan.</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="p-2">
+                        <h4 class="fw-bold mb-4" style="color: var(--dark);">🎯 Langkah Misi Strategis</h4>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="mission-grid-card">
+                                    <div class="mission-number">01</div>
+                                    <h6 class="fw-bold text-dark mb-2">Pelayanan Masyarakat</h6>
+                                    <p class="text-muted small mb-0">Pemerintah desa berkomitmen untuk memberikan pelayanan publik yang tulus, cepat, dan mengutamakan kenyamanan serta kebutuhan seluruh warga tanpa pamrih.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mission-grid-card">
+                                    <div class="mission-number">02</div>
+                                    <h6 class="fw-bold text-dark mb-2">Transparansi</h6>
+                                    <p class="text-muted small mb-0">Tata kelola pemerintahan desa akan dijalankan secara terbuka dan jujur, baik dalam hal kebijakan maupun pengelolaan anggaran, sehingga warga bisa ikut mengawasi secara langsung.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mission-grid-card">
+                                    <div class="mission-number">03</div>
+                                    <h6 class="fw-bold text-dark mb-2">Pembangunan Merata</h6>
+                                    <p class="text-muted small mb-0">Program pembangunan infrastruktur, fasilitas umum, dan kesejahteraan sosial akan disebarkan secara adil ke seluruh wilayah dusun tanpa ada yang dianaktirikan.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
-</body>
+   <!-- ========================================================= -->
+        <!-- 3. HALAMAN ORGANISASI (ULTRA-PREMIUM GRAPHIC EDITION)    -->
+        <!-- ========================================================= -->
+        <div id="organisasi" class="page-section py-5">
+            <div class="text-center mb-5">
+                <span class="badge mb-2 px-3 py-2 text-uppercase font-monospace" style="background: linear-gradient(135deg, rgba(122, 0, 204, 0.1), rgba(0, 203, 214, 0.1)); color: var(--primary); font-weight: 700; border-radius: 50px; font-size: 0.75rem; letter-spacing: 1.5px; border: 1px solid rgba(122,0,204,0.2);">🛡️ Tata Kelola Pemerintahan</span>
+                <h2 class="section-main-title d-block fw-extrabold" style="letter-spacing: -1px;">Bagan Aparatur Pemdes</h2>
+                <p class="text-muted small mt-2 mx-auto" style="max-width: 600px;">Struktur kepemimpinan, jajaran sekretariat, pelaksana teknis, hingga penguasa kewilayahan di Desa Tanjungtirta</p>
+            </div>
 
+            <!-- LEVEL 1: TOP EXECUTIVE & LEGISLATIF -->
+            <div class="row g-4 justify-content-center mb-5">
+                <!-- Kepala Desa -->
+                <div class="col-md-5">
+                    <div class="card p-4 text-center border-0 position-relative overflow-hidden" style="border-radius: 30px; background: linear-gradient(135deg, #1e0b36, #4b0082); color: #fff; box-shadow: 0 20px 40px rgba(75, 0, 130, 0.3);">
+                        <div class="position-absolute end-0 bottom-0 opacity-10" style="font-size: 8rem; transform: translate(15px, 20px); pointer-events: none;">⚡</div>
+                        <div class="d-inline-flex align-items-center justify-content-center mx-auto mb-3" style="width: 50px; height: 50px; background: rgba(255,255,255,0.1); border-radius: 15px; font-size: 1.5rem;">👑</div>
+                        <h4 class="fw-bold mb-1" style="letter-spacing: -0.5px; font-family: var(--font-heading);">HERI AGUS SETIAJI</h4>
+                        <div class="small fw-bold text-uppercase tracking-widest text-info" style="font-size: 0.75rem; font-weight: 700; letter-spacing: 1px;">Kepala Desa</div>
+                    </div>
+                </div>
+                
+                <!-- Ketua BPD -->
+                <div class="col-md-5">
+                    <div class="card p-4 text-center border-0 position-relative overflow-hidden" style="border-radius: 30px; background: #ffffff; border: 2px dashed rgba(122, 0, 204, 0.3) !important; box-shadow: 0 15px 35px rgba(0,0,0,0.03);">
+                        <div class="position-absolute end-0 bottom-0 text-muted opacity-10" style="font-size: 8rem; transform: translate(15px, 20px); pointer-events: none;">⚖️</div>
+                        <div class="d-inline-flex align-items-center justify-content-center mx-auto mb-3" style="width: 50px; height: 50px; background: #f3f0ff; border-radius: 15px; font-size: 1.5rem;">🤝</div>
+                        <h4 class="fw-bold text-dark mb-1" style="letter-spacing: -0.5px; font-family: var(--font-heading);">BUDI HARJO</h4>
+                        <div class="small fw-bold text-uppercase tracking-widest text-muted" style="font-size: 0.75rem; letter-spacing: 1px;">Ketua BPD</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LEVEL 2: ADMINISTRATOR UTAMA (SEKDES) -->
+            <div class="row justify-content-center mb-5 position-relative">
+                <div class="col-md-4 text-center">
+                    <div class="d-none d-md-block mx-auto" style="width: 2px; height: 40px; background: linear-gradient(to bottom, #4b0082, #00cbd6); margin-top: -40px; margin-bottom: 10px;"></div>
+                    <div class="card card-custom-glow p-4 border-0 position-relative overflow-hidden" style="border-radius: 25px; background: #ffffff; box-shadow: 0 15px 35px rgba(122,0,204,0.08) !important; border-top: 5px solid #00cbd6 !important;">
+                        <div class="position-absolute opacity-10" style="font-size: 4rem; right: 15px; bottom: 5px;">✍️</div>
+                        <div class="text-muted small fw-bold font-monospace mb-1" style="font-size: 0.65rem; color: #00cbd6 !important; letter-spacing: 1px;">KENDALI ADMINISTRASI</div>
+                        <h5 class="fw-bold text-dark mb-1" style="font-family: var(--font-heading);">FUAD HASAN</h5>
+                        <p class="text-uppercase mb-0 small fw-bold text-secondary" style="font-size: 0.75rem; letter-spacing: 0.5px;">Sekretaris Desa</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LEVEL 3: KEPALA URUSAN (KAUR) -->
+            <div class="row g-3 justify-content-center mb-5">
+                <div class="col-12 text-center mb-1">
+                    <span class="badge px-3 py-2 text-uppercase" style="background: rgba(0, 203, 214, 0.1); color: #00cbd6; border-radius: 50px; font-size: 0.7rem; letter-spacing: 1px; font-weight: 700; border: 1px solid rgba(0,203,214,0.2);">💼 Staf Sekretariat (KAUR)</span>
+                </div>
+                <!-- Kaur Umum -->
+                <div class="col-md-3">
+                    <div class="card card-custom-glow p-3 text-center border-0" style="border-radius: 20px; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.02); border-left: 4px solid #00cbd6 !important;">
+                        <div style="font-size: 1.5rem;" class="mb-2">📁</div>
+                        <h6 class="fw-bold text-dark mb-1" style="font-family: var(--font-heading);">WAHID</h6>
+                        <span class="badge rounded-pill bg-light text-secondary px-3 py-1" style="font-size: 0.65rem; font-weight: 600;">KAUR UMUM</span>
+                    </div>
+                </div>
+                <!-- Kaur Keuangan -->
+                <div class="col-md-3">
+                    <div class="card card-custom-glow p-3 text-center border-0" style="border-radius: 20px; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.02); border-left: 4px solid #00cbd6 !important;">
+                        <div style="font-size: 1.5rem;" class="mb-2">💳</div>
+                        <h6 class="fw-bold text-dark mb-1" style="font-family: var(--font-heading);">NURUL FITRIANI</h6>
+                        <span class="badge rounded-pill bg-light text-secondary px-3 py-1" style="font-size: 0.65rem; font-weight: 600;">KAUR KEUANGAN</span>
+                    </div>
+                </div>
+                <!-- Kaur Perencanaan -->
+                <div class="col-md-3">
+                    <div class="card card-custom-glow p-3 text-center border-0" style="border-radius: 20px; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.02); border-left: 4px solid #00cbd6 !important;">
+                        <div style="font-size: 1.5rem;" class="mb-2">📊</div>
+                        <h6 class="fw-bold text-dark mb-1" style="font-family: var(--font-heading);">YASKUM</h6>
+                        <span class="badge rounded-pill bg-light text-secondary px-3 py-1" style="font-size: 0.65rem; font-weight: 600;">KAUR PERENCANAAN</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LEVEL 4: KASI -->
+            <div class="row g-3 justify-content-center mb-5">
+                <div class="col-12 text-center mb-1">
+                    <span class="badge px-3 py-2 text-uppercase" style="background: rgba(255, 0, 127, 0.1); color: #ff007f; border-radius: 50px; font-size: 0.7rem; letter-spacing: 1px; font-weight: 700; border: 1px solid rgba(255, 0, 127, 0.2);">🚀 Pelaksana Teknis (KASI)</span>
+                </div>
+                <!-- Kasi Pemerintahan -->
+                <div class="col-md-3">
+                    <div class="card card-custom-glow p-3 text-center border-0" style="border-radius: 20px; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.02); border-bottom: 4px solid #ff007f !important;">
+                        <div style="font-size: 1.5rem;" class="mb-2">🏢</div>
+                        <h6 class="fw-bold text-dark mb-1" style="font-family: var(--font-heading);">WARSITO</h6>
+                        <p class="mb-0 fw-bold font-monospace text-uppercase" style="font-size: 0.65rem; color: #ff007f; letter-spacing: 0.5px;">Kasi Pemerintahan</p>
+                    </div>
+                </div>
+                <!-- Kasi Kesejahteraan -->
+                <div class="col-md-3">
+                    <div class="card card-custom-glow p-3 text-center border-0" style="border-radius: 20px; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.02); border-bottom: 4px solid #ff007f !important;">
+                        <div style="font-size: 1.5rem;" class="mb-2">🌱</div>
+                        <h6 class="fw-bold text-dark mb-1" style="font-family: var(--font-heading);">BADRIYAH</h6>
+                        <p class="mb-0 fw-bold font-monospace text-uppercase" style="font-size: 0.65rem; color: #ff007f; letter-spacing: 0.5px;">Kasi Kesejahteraan</p>
+                    </div>
+                </div>
+                <!-- Kasi Pelayanan -->
+                <div class="col-md-3">
+                    <div class="card card-custom-glow p-3 text-center border-0" style="border-radius: 20px; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.02); border-bottom: 4px solid #ff007f !important;">
+                        <div style="font-size: 1.5rem;" class="mb-2">🤝</div>
+                        <h6 class="fw-bold text-dark mb-1" style="font-family: var(--font-heading);">ISNAINTO</h6>
+                        <p class="mb-0 fw-bold font-monospace text-uppercase" style="font-size: 0.65rem; color: #ff007f; letter-spacing: 0.5px;">Kasi Pelayanan</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LEVEL 5: OTORITAS KEWILAYAHAN (KADUS ULTRA-PREMIUM) -->
+            <div class="row g-3 justify-content-center">
+                <div class="col-12 text-center mb-3">
+                    <span class="badge px-4 py-2 text-uppercase text-white" style="background: linear-gradient(135deg, var(--primary), #ff007f); border-radius: 50px; font-size: 0.75rem; letter-spacing: 1px; font-weight: 700; box-shadow: 0 4px 15px rgba(122,0,204,0.2);">📍 Otoritas Pelaksana Kewilayahan (KADUS)</span>
+                </div>
+                
+                <!-- Kadus I -->
+                <div class="col-6 col-md-2">
+                    <div class="card card-custom-glow p-3 text-center border-0 position-relative overflow-hidden" style="border-radius: 22px; min-height: 140px; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; border: 1px solid #f4f0ff; box-shadow: 0 10px 25px rgba(122,0,204,0.05) !important;">
+                        <div class="position-absolute end-0 top-0 opacity-10" style="font-size: 3rem; transform: translate(5px, -5px); pointer-events: none;">🧭</div>
+                        <div class="mx-auto mb-2 px-2 py-1 rounded-pill fw-bold font-monospace text-uppercase text-white" style="font-size: 0.6rem; background: linear-gradient(90deg, var(--primary), var(--accent)); width: fit-content; letter-spacing: 0.5px;">DUSUN I</div>
+                        <h6 class="fw-bold text-dark mb-0" style="font-size: 0.85rem; line-height: 1.3; font-family: var(--font-heading);">SETYO WIGIATMOKO</h6>
+                        <div class="small tracking-widest text-muted mt-2" style="font-size: 0.6rem; font-weight: 700;">WILAYAH I</div>
+                    </div>
+                </div>
+
+                <!-- Kadus II -->
+                <div class="col-6 col-md-2">
+                    <div class="card card-custom-glow p-3 text-center border-0 position-relative overflow-hidden" style="border-radius: 22px; min-height: 140px; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; border: 1px solid #f4f0ff; box-shadow: 0 10px 25px rgba(122,0,204,0.05) !important;">
+                        <div class="position-absolute end-0 top-0 opacity-10" style="font-size: 3rem; transform: translate(5px, -5px); pointer-events: none;">🧭</div>
+                        <div class="mx-auto mb-2 px-2 py-1 rounded-pill fw-bold font-monospace text-uppercase text-white" style="font-size: 0.6rem; background: linear-gradient(90deg, var(--primary), var(--accent)); width: fit-content; letter-spacing: 0.5px;">DUSUN II</div>
+                        <h6 class="fw-bold text-dark mb-0" style="font-size: 0.85rem; line-height: 1.3; font-family: var(--font-heading);">SARWONO</h6>
+                        <div class="small tracking-widest text-muted mt-2" style="font-size: 0.6rem; font-weight: 700;">WILAYAH II</div>
+                    </div>
+                </div>
+
+                <!-- Kadus III -->
+                <div class="col-6 col-md-2">
+                    <div class="card card-custom-glow p-3 text-center border-0 position-relative overflow-hidden" style="border-radius: 22px; min-height: 140px; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; border: 1px solid #f4f0ff; box-shadow: 0 10px 25px rgba(122,0,204,0.05) !important;">
+                        <div class="position-absolute end-0 top-0 opacity-10" style="font-size: 3rem; transform: translate(5px, -5px); pointer-events: none;">🧭</div>
+                        <div class="mx-auto mb-2 px-2 py-1 rounded-pill fw-bold font-monospace text-uppercase text-white" style="font-size: 0.6rem; background: linear-gradient(90deg, var(--primary), var(--accent)); width: fit-content; letter-spacing: 0.5px;">DUSUN III</div>
+                        <h6 class="fw-bold text-dark mb-0" style="font-size: 0.85rem; line-height: 1.3; font-family: var(--font-heading);">SYUKUR</h6>
+                        <div class="small tracking-widest text-muted mt-2" style="font-size: 0.6rem; font-weight: 700;">WILAYAH III</div>
+                    </div>
+                </div>
+
+                <!-- Kadus IV -->
+                <div class="col-6 col-md-2">
+                    <div class="card card-custom-glow p-3 text-center border-0 position-relative overflow-hidden" style="border-radius: 22px; min-height: 140px; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; border: 1px solid #f4f0ff; box-shadow: 0 10px 25px rgba(122,0,204,0.05) !important;">
+                        <div class="position-absolute end-0 top-0 opacity-10" style="font-size: 3rem; transform: translate(5px, -5px); pointer-events: none;">🧭</div>
+                        <div class="mx-auto mb-2 px-2 py-1 rounded-pill fw-bold font-monospace text-uppercase text-white" style="font-size: 0.6rem; background: linear-gradient(90deg, var(--primary), var(--accent)); width: fit-content; letter-spacing: 0.5px;">DUSUN IV</div>
+                        <h6 class="fw-bold text-dark mb-0" style="font-size: 0.85rem; line-height: 1.3; font-family: var(--font-heading);">SUTIR</h6>
+                        <div class="small tracking-widest text-muted mt-2" style="font-size: 0.6rem; font-weight: 700;">WILAYAH IV</div>
+                    </div>
+                </div>
+
+                <!-- Kadus V -->
+                <div class="col-6 col-md-2">
+                    <div class="card card-custom-glow p-3 text-center border-0 position-relative overflow-hidden" style="border-radius: 22px; min-height: 140px; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; border: 1px solid #f4f0ff; box-shadow: 0 10px 25px rgba(122,0,204,0.05) !important;">
+                        <div class="position-absolute end-0 top-0 opacity-10" style="font-size: 3rem; transform: translate(5px, -5px); pointer-events: none;">🧭</div>
+                        <div class="mx-auto mb-2 px-2 py-1 rounded-pill fw-bold font-monospace text-uppercase text-white" style="font-size: 0.6rem; background: linear-gradient(90deg, var(--primary), var(--accent)); width: fit-content; letter-spacing: 0.5px;">DUSUN V</div>
+                        <h6 class="fw-bold text-dark mb-0" style="font-size: 0.85rem; line-height: 1.3; font-family: var(--font-heading);">LULUT MULIANA</h6>
+                        <div class="small tracking-widest text-muted mt-2" style="font-size: 0.6rem; font-weight: 700;">WILAYAH V</div>
+                    </div>
+                </div>
+
+                <!-- Kadus VI -->
+                <div class="col-6 col-md-2">
+                    <div class="card card-custom-glow p-3 text-center border-0 position-relative overflow-hidden" style="border-radius: 22px; min-height: 140px; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; border: 1px solid #f4f0ff; box-shadow: 0 10px 25px rgba(122,0,204,0.05) !important;">
+                        <div class="position-absolute end-0 top-0 opacity-10" style="font-size: 3rem; transform: translate(5px, -5px); pointer-events: none;">🧭</div>
+                        <div class="mx-auto mb-2 px-2 py-1 rounded-pill fw-bold font-monospace text-uppercase text-white" style="font-size: 0.6rem; background: linear-gradient(90deg, var(--primary), var(--accent)); width: fit-content; letter-spacing: 0.5px;">DUSUN VI</div>
+                        <h6 class="fw-bold text-dark mb-0" style="font-size: 0.85rem; line-height: 1.3; font-family: var(--font-heading);">PERASPEK A. ARDIKA</h6>
+                        <div class="small tracking-widest text-muted mt-2" style="font-size: 0.6rem; font-weight: 700;">WILAYAH VI</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    <div id="statistik" class="page-section">
+        <section>
+            <h2 class="section-title">Statistik Penduduk</h2>
+            
+            <div class="row g-4 mb-5 text-center match-height">
+                <div class="col-sm-6 col-md-3 d-flex">
+                    <div class="stat-box h-100 w-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="stat-badge-icon mx-auto" style="background: var(--soft); color: var(--primary);">🙋‍♂️</div>
+                            <h1>2461</h1>
+                        </div>
+                        <p class="fw-bold text-muted mb-0 mt-2">Laki-Laki</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 d-flex">
+                    <div class="stat-box h-100 w-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="stat-badge-icon mx-auto" style="background: var(--accent-light); color: var(--accent);">🙋‍♀️</div>
+                            <h1>2330</h1>
+                        </div>
+                        <p class="fw-bold text-muted mb-0 mt-2">Perempuan</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 d-flex">
+                    <div class="stat-box h-100 w-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="stat-badge-icon mx-auto" style="background: #e6f7ff; color: #0091ff;">🏠</div>
+                            <h1>1425</h1>
+                        </div>
+                        <p class="fw-bold text-muted mb-0 mt-2">Kepala Keluarga</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 d-flex">
+                    <div class="stat-box h-100 w-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="stat-badge-icon mx-auto" style="background: #e6fff0; color: #00b341;">👥</div>
+                            <h1>4791</h1>
+                        </div>
+                        <p class="fw-bold text-muted mb-0 mt-2">Total Penduduk</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center gap-2 mb-4 flex-wrap">
+                <button class="btn btn-toggle-stat active" onclick="toggleStatPane('stat-gender', this)">⚡ Demografi Gender</button>
+                <button class="btn btn-toggle-stat" onclick="toggleStatPane('stat-usia', this)">🧸 Kelompok Usia</button>
+                <button class="btn btn-toggle-stat" onclick="toggleStatPane('stat-pendidikan', this)">🎓 Tingkat Pendidikan</button>
+                <button class="btn btn-toggle-stat" onclick="toggleStatPane('stat-pekerjaan', this)">💼 Mata Pencaharian</button>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="card p-4 p-md-5 custom-progress-container">
+                        
+                        <div id="stat-gender" class="stat-view-pane active-pane">
+                            <h5 class="fw-bold mb-4 text-center" style="color: var(--primary);">Rasio Jenis Kelamin</h5>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2 fw-semibold">
+                                    <span>🙋‍♂️ Laki-Laki (2.461 Jiwa)</span>
+                                    <span style="color: var(--primary);">51.4%</span>
+                                </div>
+                                <div class="progress" style="height: 16px; border-radius: 50px; background-color: var(--soft);">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 51.4%; background: linear-gradient(90deg, var(--primary), var(--secondary)); border-radius: 50px;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="d-flex justify-content-between mb-2 fw-semibold">
+                                    <span>🙋‍♀️ Perempuan (2.330 Jiwa)</span>
+                                    <span style="color: var(--accent);">48.6%</span>
+                                </div>
+                                <div class="progress" style="height: 16px; border-radius: 50px; background-color: var(--soft);">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 48.6%; background: linear-gradient(90deg, var(--secondary), var(--accent)); border-radius: 50px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="stat-usia" class="stat-view-pane">
+                            <h5 class="fw-bold mb-4 text-center" style="color: var(--primary);">Kategori Usia</h5>
+                            <div class="d-flex flex-column gap-4">
+                                <div>
+                                    <div class="d-flex justify-content-between mb-1 small fw-bold"><span>👶 Anak-Anak (0 - 14 Tahun)</span><span>22%</span></div>
+                                    <div class="progress" style="height: 10px; border-radius: 50px;"><div class="progress-bar" style="width: 22%; background-color: var(--accent); border-radius: 50px;"></div></div>
+                                </div>
+                                <div>
+                                    <div class="d-flex justify-content-between mb-1 small fw-bold"><span>🧑 Usia Produktif (15 - 64 Tahun)</span><span>65%</span></div>
+                                    <div class="progress" style="height: 10px; border-radius: 50px;"><div class="progress-bar" style="width: 65%; background-color: var(--primary); border-radius: 50px;"></div></div>
+                                </div>
+                                <div>
+                                    <div class="d-flex justify-content-between mb-1 small fw-bold"><span>🧓 Lansia (65+ Tahun)</span><span>13%</span></div>
+                                    <div class="progress" style="height: 10px; border-radius: 50px;"><div class="progress-bar" style="width: 13%; background-color: var(--secondary); border-radius: 50px;"></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="stat-pendidikan" class="stat-view-pane">
+                            <h5 class="fw-bold mb-4 text-center" style="color: var(--primary);">Tingkat Pendidikan Terakhir</h5>
+                            <div class="d-flex flex-column gap-3">
+                                <div>
+                                    <div class="d-flex justify-content-between mb-1 small fw-semibold"><span>SD / Sederajat</span><span>38%</span></div>
+                                    <div class="progress" style="height: 8px; border-radius: 50px;"><div class="progress-bar" style="width: 38%; background-color: var(--primary); border-radius: 50px;"></div></div>
+                                </div>
+                                <div>
+                                    <div class="d-flex justify-content-between mb-1 small fw-semibold"><span>SMP / Sederajat</span><span>29%</span></div>
+                                    <div class="progress" style="height: 8px; border-radius: 50px;"><div class="progress-bar" style="width: 29%; background-color: var(--secondary); border-radius: 50px;"></div></div>
+                                </div>
+                                <div>
+                                    <div class="d-flex justify-content-between mb-1 small fw-semibold"><span>SMA / SMK / Sederajat</span><span>25%</span></div>
+                                    <div class="progress" style="height: 8px; border-radius: 50px;"><div class="progress-bar" style="width: 25%; background-color: var(--dark); border-radius: 50px;"></div></div>
+                                </div>
+                                <div>
+                                    <div class="d-flex justify-content-between mb-1 small fw-semibold"><span>Diploma / Sarjana</span><span>8%</span></div>
+                                    <div class="progress" style="height: 8px; border-radius: 50px;"><div class="progress-bar" style="width: 8%; background-color: var(--accent); border-radius: 50px;"></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="stat-pekerjaan" class="stat-view-pane">
+                            <h5 class="fw-bold mb-4 text-center" style="color: var(--primary);">Mata Pencaharian Utama Penduduk</h5>
+                            <div class="d-flex flex-column gap-3">
+                                <div>
+                                    <div class="d-flex justify-content-between mb-1 small fw-semibold"><span>🌾 Petani & Pekebun</span><span>45%</span></div>
+                                    <div class="progress" style="height: 10px; border-radius: 50px;"><div class="progress-bar" style="width: 45%; background-color: var(--primary); border-radius: 50px;"></div></div>
+                                </div>
+                                <div>
+                                    <div class="d-flex justify-content-between mb-1 small fw-semibold"><span>🛍️ Pelaku UMKM / Pedagang</span><span>22%</span></div>
+                                    <div class="progress" style="height: 10px; border-radius: 50px;"><div class="progress-bar" style="width: 22%; background-color: var(--accent); border-radius: 50px;"></div></div>
+                                </div>
+                                <div>
+                                    <div class="d-flex justify-content-between mb-1 small fw-semibold"><span>🔨 Buruh Swasta / Harian Lepas</span><span>18%</span></div>
+                                    <div class="progress" style="height: 10px; border-radius: 50px;"><div class="progress-bar" style="width: 18%; background-color: var(--secondary); border-radius: 50px;"></div></div>
+                                </div>
+                                <div>
+                                    <div class="d-flex justify-content-between mb-1 small fw-semibold"><span>💼 Pegawai Negeri (PNS/TNI/Polri) / Guru</span><span>7%</span></div>
+                                    <div class="progress" style="height: 10px; border-radius: 50px;"><div class="progress-bar" style="width: 7%; background-color: var(--dark); border-radius: 50px;"></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+<div id="umkm" class="page-section">
+    <section>
+        <h2 class="section-title">Halaman UMKM Desa</h2>
+        
+        <div class="search-container">
+            <div class="search-wrapper">
+                <span class="search-icon-inside">🔍</span>
+                <!-- Mengembalikan fungsi pemicu asli bawaan template Anda (onkeyup="searchUMKM()") -->
+                <input type="text" id="umkmSearchInput" class="search-input" placeholder="Cari nama UMKM, produk, atau alamat dusun..." onkeyup="searchUMKM()">
+            </div>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- AREA UTAMA DAFTAR 10 KARTU UMKM RIIL (TANPA FOTO)         -->
+        <!-- ========================================================= -->
+        <div class="row g-4" id="umkmContainer">
+            
+            <!-- UMKM 1: E-Warung Andini -->
+            <div class="col-md-4 umkm-card-item">
+                <div class="card h-100 p-3 border-0 shadow-sm" style="border-radius: 20px; background: #fff;">
+                    <div class="card-body d-flex flex-column justify-content-between p-2">
+                        <div>
+                            <span class="umkm-badge-type" style="background-color: #aa00ff; color: #fff; padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; font-weight: bold; display: inline-block;">SEMBAKO & KEBUTUHAN POKOK</span>
+                            <h5 class="fw-bold umkm-name mt-3 mb-3">E-Warung Andini</h5>
+                            
+                            <div class="d-flex align-items-start gap-2 mb-2">
+                                <span style="font-size: 1.1rem;">🛍️</span>
+                                <div>
+                                    <small class="text-muted d-block font-monospace" style="font-size: 0.65rem;">PRODUK YANG DIJUAL</small>
+                                    <span class="text-dark small fw-semibold umkm-produk-text">Beras, minyak goreng, gula, sembako, dan kebutuhan pokok rumah tangga lainnya.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <hr class="text-muted opacity-25 my-2">
+                            <div class="umkm-meta-info mb-3 d-flex align-items-center gap-2">
+                                <span>📍</span>
+                                <span class="small text-muted"><strong>Alamat:</strong> <span class="umkm-alamat-text">Dusun Bengkat II</span></span>
+                            </div>
+                            <button class="btn btn-umkm-detail w-100 text-center" onclick="showUmkmDetail('E-Warung Andini', 'Sembako & Kebutuhan Pokok', 'Menyediakan berbagai macam kebutuhan sembako seperti beras, minyak goreng, gula pasir, mi instan, serta komoditas kebutuhan pokok rumah tangga lainnya dengan pelayanan ramah dan harga bersahabat.', 'Dusun Bengkat II, Desa Tanjungtirta, Kec. Punggelan, Banjarnegara')">Lihat Detail ⚡</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UMKM 2: TB. Tanjung Mulya -->
+            <div class="col-md-4 umkm-card-item">
+                <div class="card h-100 p-3 border-0 shadow-sm" style="border-radius: 20px; background: #fff;">
+                    <div class="card-body d-flex flex-column justify-content-between p-2">
+                        <div>
+                            <span class="umkm-badge-type" style="background-color: #0091ff; color: #fff; padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; font-weight: bold; display: inline-block;">BAHAN BANGUNAN</span>
+                            <h5 class="fw-bold umkm-name mt-3 mb-3">TB. Tanjung Mulya</h5>
+                            
+                            <div class="d-flex align-items-start gap-2 mb-2">
+                                <span style="font-size: 1.1rem;">🛍️</span>
+                                <div>
+                                    <small class="text-muted d-block font-monospace" style="font-size: 0.65rem;">PRODUK YANG DIJUAL</small>
+                                    <span class="text-dark small fw-semibold umkm-produk-text">Bahan bangunan lengkap, pipa, besi, semen, dan toren air.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <hr class="text-muted opacity-25 my-2">
+                            <div class="umkm-meta-info mb-3 d-flex align-items-center gap-2">
+                                <span>📍</span>
+                                <span class="small text-muted"><strong>Alamat:</strong> <span class="umkm-alamat-text">Dusun Siwalan</span></span>
+                            </div>
+                            <button class="btn btn-umkm-detail w-100 text-center" onclick="showUmkmDetail('TB. Tanjung Mulya', 'Bahan Bangunan', 'Toko Bahan Bangunan terlengkap di kawasan Tanjungtirta. Melayani pengadaan semen, besi beton, pipa paralon, cat, tandon/toren air, alat pertukangan, serta material konstruksi dasar lainnya.', 'Dusun Siwalan, Desa Tanjungtirta, Kec. Punggelan, Banjarnegara')">Lihat Detail ⚡</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UMKM 3: Toko Agung Azzam -->
+            <div class="col-md-4 umkm-card-item">
+                <div class="card h-100 p-3 border-0 shadow-sm" style="border-radius: 20px; background: #fff;">
+                    <div class="card-body d-flex flex-column justify-content-between p-2">
+                        <div>
+                            <span class="umkm-badge-type" style="background-color: #aa00ff; color: #fff; padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; font-weight: bold; display: inline-block;">TOKO KELONTONG</span>
+                            <h5 class="fw-bold umkm-name mt-3 mb-3">Toko Agung Azzam</h5>
+                            
+                            <div class="d-flex align-items-start gap-2 mb-2">
+                                <span style="font-size: 1.1rem;">🛍️</span>
+                                <div>
+                                    <small class="text-muted d-block font-monospace" style="font-size: 0.65rem;">PRODUK YANG DIJUAL</small>
+                                    <span class="text-dark small fw-semibold umkm-produk-text">Kebutuhan harian, jajan anak-anak, rokok, minuman, dan sembako retail.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <hr class="text-muted opacity-25 my-2">
+                            <div class="umkm-meta-info mb-3 d-flex align-items-center gap-2">
+                                <span>📍</span>
+                                <span class="small text-muted"><strong>Alamat:</strong> <span class="umkm-alamat-text">Dusun Siwalan</span></span>
+                            </div>
+                            <button class="btn btn-umkm-detail w-100 text-center" onclick="showUmkmDetail('Toko Agung Azzam', 'Toko Kelontong', 'Menyediakan kebutuhan retail harian rumah tangga, produk minuman dingin, aneka jajanan/snack anak-anak, rokok, hingga rupa-rupa barang kelontong eceran.', 'Dusun Siwalan, Desa Tanjungtirta, Kec. Punggelan, Banjarnegara')">Lihat Detail ⚡</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UMKM 4: Sukses Mart -->
+            <div class="col-md-4 umkm-card-item">
+                <div class="card h-100 p-3 border-0 shadow-sm" style="border-radius: 20px; background: #fff;">
+                    <div class="card-body d-flex flex-column justify-content-between p-2">
+                        <div>
+                            <span class="umkm-badge-type" style="background-color: #ff9100; color: #fff; padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; font-weight: bold; display: inline-block;">MINIMARKET RETAIL</span>
+                            <h5 class="fw-bold umkm-name mt-3 mb-3">Sukses Mart</h5>
+                            
+                            <div class="d-flex align-items-start gap-2 mb-2">
+                                <span style="font-size: 1.1rem;">🛍️</span>
+                                <div>
+                                    <small class="text-muted d-block font-monospace" style="font-size: 0.65rem;">PRODUK YANG DIJUAL</small>
+                                    <span class="text-dark small fw-semibold umkm-produk-text">Minimarket lokal yang menyediakan aneka snack, kosmetik, sabun, dan kebutuhan rumah tangga.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <hr class="text-muted opacity-25 my-2">
+                            <div class="umkm-meta-info mb-3 d-flex align-items-center gap-2">
+                                <span>📍</span>
+                                <span class="small text-muted"><strong>Alamat:</strong> <span class="umkm-alamat-text">Jalan Bondol, Dusun Siwalan</span></span>
+                            </div>
+                            <button class="btn btn-umkm-detail w-100 text-center" onclick="showUmkmDetail('Sukses Mart', 'Minimarket Retail', 'Minimarket lokal dengan penataan modern yang menyediakan aneka snack, perlengkapan mandi, kosmetik, detergen, sabun, makanan instan, serta kebutuhan perlengkapan rumah tangga harian.', 'Jalan Bondol, Dusun Siwalan, Desa Tanjungtirta, Kec. Punggelan, Banjarnegara')">Lihat Detail ⚡</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UMKM 5: Warung Sederhana Wawiwu -->
+            <div class="col-md-4 umkm-card-item">
+                <div class="card h-100 p-3 border-0 shadow-sm" style="border-radius: 20px; background: #fff;">
+                    <div class="card-body d-flex flex-column justify-content-between p-2">
+                        <div>
+                            <span class="umkm-badge-type" style="background-color: #e6005c; color: #fff; padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; font-weight: bold; display: inline-block;">WARUNG MAKAN</span>
+                            <h5 class="fw-bold umkm-name mt-3 mb-3">Warung Sederhana Wawiwu</h5>
+                            
+                            <div class="d-flex align-items-start gap-2 mb-2">
+                                <span style="font-size: 1.1rem;">🛍️</span>
+                                <div>
+                                    <small class="text-muted d-block font-monospace" style="font-size: 0.65rem;">PRODUK YANG DIJUAL</small>
+                                    <span class="text-dark small fw-semibold umkm-produk-text">Kuliner matang kuliner lokal seperti pempek, aneka gorengan, es, dan kopi hangat.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <hr class="text-muted opacity-25 my-2">
+                            <div class="umkm-meta-info mb-3 d-flex align-items-center gap-2">
+                                <span>📍</span>
+                                <span class="small text-muted"><strong>Alamat:</strong> <span class="umkm-alamat-text">Area Bengkat II</span></span>
+                            </div>
+                            <button class="btn btn-umkm-detail w-100 text-center" onclick="showUmkmDetail('Warung Sederhana Wawiwu', 'Kuliner / Warung Makan', 'Menyajikan sajian kuliner matang siap saji seperti olahan pempek, aneka gorengan gurih yang renyah, es blender segar, minuman es, serta kopi hangat untuk bersantai.', 'Area Bengkat II (Depan SMP Negeri 2 Punggelan), Desa Tanjungtirta, Kec. Punggelan, Banjarnegara')">Lihat Detail ⚡</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UMKM 6: Warung Jajan Lincen Sostel -->
+            <div class="col-md-4 umkm-card-item">
+                <div class="card h-100 p-3 border-0 shadow-sm" style="border-radius: 20px; background: #fff;">
+                    <div class="card-body d-flex flex-column justify-content-between p-2">
+                        <div>
+                            <span class="umkm-badge-type" style="background-color: #e6005c; color: #fff; padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; font-weight: bold; display: inline-block;">KULINER / JAJANAN</span>
+                            <h5 class="fw-bold umkm-name mt-3 mb-3">Warung Jajan Lincen Sostel</h5>
+                            
+                            <div class="d-flex align-items-start gap-2 mb-2">
+                                <span style="font-size: 1.1rem;">🛍️</span>
+                                <div>
+                                    <small class="text-muted d-block font-monospace" style="font-size: 0.65rem;">PRODUK YANG DIJUAL</small>
+                                    <span class="text-dark small fw-semibold umkm-produk-text">Makanan ringan, camilan sore, sosis telur (sostel), dan aneka es blender.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <hr class="text-muted opacity-25 my-2">
+                            <div class="umkm-meta-info mb-3 d-flex align-items-center gap-2">
+                                <span>📍</span>
+                                <span class="small text-muted"><strong>Alamat:</strong> <span class="umkm-alamat-text">Dusun Siwalan</span></span>
+                            </div>
+                            <button class="btn btn-umkm-detail w-100 text-center" onclick="showUmkmDetail('Warung Jajan Lincen Sostel', 'Kuliner / Jajanan', 'Pusat jajanan sore favorit warga. Menyediakan jajanan ringan, camilan hangat, menu andalan Sosis Telur (Sostel) aneka bumbu toping, serta bermacam-macam minuman es rasa blender.', 'Dusun Siwalan, Desa Tanjungtirta, Kec. Punggelan, Banjarnegara')">Lihat Detail ⚡</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UMKM 7: Warung Jaenal -->
+            <div class="col-md-4 umkm-card-item">
+                <div class="card h-100 p-3 border-0 shadow-sm" style="border-radius: 20px; background: #fff;">
+                    <div class="card-body d-flex flex-column justify-content-between p-2">
+                        <div>
+                            <span class="umkm-badge-type" style="background-color: #00b341; color: #fff; padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; font-weight: bold; display: inline-block;">FASHION & OLAHRAGA</span>
+                            <h5 class="fw-bold umkm-name mt-3 mb-3">Warung Jaenal (Jersey Store)</h5>
+                            
+                            <div class="d-flex align-items-start gap-2 mb-2">
+                                <span style="font-size: 1.1rem;">🛍️</span>
+                                <div>
+                                    <small class="text-muted d-block font-monospace" style="font-size: 0.65rem;">PRODUK YANG DIJUAL</small>
+                                    <span class="text-dark small fw-semibold umkm-produk-text">Pakaian olahraga, pemesanan jersey sepak bola/futsal, serta rokok dan minuman dingin.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <hr class="text-muted opacity-25 my-2">
+                            <div class="umkm-meta-info mb-3 d-flex align-items-center gap-2">
+                                <span>📍</span>
+                                <span class="small text-muted"><strong>Alamat:</strong> <span class="umkm-alamat-text">Dusun Bengkat I</span></span>
+                            </div>
+                            <button class="btn btn-umkm-detail w-100 text-center" onclick="showUmkmDetail('Warung Jaenal (Jersey Store)', 'Fashion / Olahraga', 'Melayani penjualan pakaian olahraga ready stock maupun sistem Pre-Order (P.O) untuk jersey sepak bola, futsal, voli, serta komunitas. Menyediakan pula komoditas rokok dan minuman dingin.', 'Dusun Bengkat I, Desa Tanjungtirta, Kec. Punggelan, Banjarnegara')">Lihat Detail ⚡</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UMKM 8: Warung Angkringan Axelle -->
+            <div class="col-md-4 umkm-card-item">
+                <div class="card h-100 p-3 border-0 shadow-sm" style="border-radius: 20px; background: #fff;">
+                    <div class="card-body d-flex flex-column justify-content-between p-2">
+                        <div>
+                            <span class="umkm-badge-type" style="background-color: #e6005c; color: #fff; padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; font-weight: bold; display: inline-block;">ANGKRINGAN</span>
+                            <h5 class="fw-bold umkm-name mt-3 mb-3">Warung Angkringan Axelle</h5>
+                            
+                            <div class="d-flex align-items-start gap-2 mb-2">
+                                <span style="font-size: 1.1rem;">🛍️</span>
+                                <div>
+                                    <small class="text-muted d-block font-monospace" style="font-size: 0.65rem;">PRODUK YANG DIJUAL</small>
+                                    <span class="text-dark small fw-semibold umkm-produk-text">Nasi kucing, sate-satean (usus, telur puyuh), gorengan, wedangan, kopi, dan susu.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <hr class="text-muted opacity-25 my-2">
+                            <div class="umkm-meta-info mb-3 d-flex align-items-center gap-2">
+                                <span>📍</span>
+                                <span class="small text-muted"><strong>Alamat:</strong> <span class="umkm-alamat-text">Dusun Bengkat II</span></span>
+                            </div>
+                            <button class="btn btn-umkm-detail w-100 text-center" onclick="showUmkmDetail('Warung Angkringan Axelle', 'Kuliner / Angkringan', 'Angkringan khas nusantara dengan kuliner merakyat. Menyajikan nasi kucing sambal terasi/teri, aneka sate (sate usus, ati ampela, telur puyuh), gorengan hangat, jahe susu, wedangan tradisional, dan kopi.', 'Dusun Bengkat II, Desa Tanjungtirta, Kec. Punggelan, Banjarnegara')">Lihat Detail ⚡</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UMKM 9: Toko Manunggal Jaya -->
+            <div class="col-md-4 umkm-card-item">
+                <div class="card h-100 p-3 border-0 shadow-sm" style="border-radius: 20px; background: #fff;">
+                    <div class="card-body d-flex flex-column justify-content-between p-2">
+                        <div>
+                            <span class="umkm-badge-type" style="background-color: #aa00ff; color: #fff; padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; font-weight: bold; display: inline-block;">KELONTONG & GAS</span>
+                            <h5 class="fw-bold umkm-name mt-3 mb-3">Toko Manunggal Jaya (Warsikin)</h5>
+                            
+                            <div class="d-flex align-items-start gap-2 mb-2">
+                                <span style="font-size: 1.1rem;">🛍️</span>
+                                <div>
+                                    <small class="text-muted d-block font-monospace" style="font-size: 0.65rem;">PRODUK YANG DIJUAL</small>
+                                    <span class="text-dark small fw-semibold umkm-produk-text">Toko kelontong penyedia gas LPG, mi instan, bumbu dapur, dan keperluan dapur ringkas.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <hr class="text-muted opacity-25 my-2">
+                            <div class="umkm-meta-info mb-3 d-flex align-items-center gap-2">
+                                <span>📍</span>
+                                <span class="small text-muted"><strong>Alamat:</strong> <span class="umkm-alamat-text">Dusun Siwaru RT 02 / RW 01</span></span>
+                            </div>
+                            <button class="btn btn-umkm-detail w-100 text-center" onclick="showUmkmDetail('Toko Manunggal Jaya (Warsikin)', 'Toko Kelontong & Gas', 'Agen penyedia Gas LPG ukuran 3kg and 12kg resmi, stok mi instan partai/eceran, aneka bumbu dapur ringkas, bahan masakan instan, dan keperluan logistik dapur rumah tangga.', 'Dusun Siwaru RT 02 / RW 01, Desa Tanjungtirta, Kec. Punggelan, Banjarnegara')">Lihat Detail ⚡</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UMKM 10: Agen Natini -->
+            <div class="col-md-4 umkm-card-item">
+                <div class="card h-100 p-3 border-0 shadow-sm" style="border-radius: 20px; background: #fff;">
+                    <div class="card-body d-flex flex-column justify-content-between p-2">
+                        <div>
+                            <span class="umkm-badge-type" style="background-color: #00cbd6; color: #fff; padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; font-weight: bold; display: inline-block;">KELONTONG & JASA AGEN</span>
+                            <h5 class="fw-bold umkm-name mt-3 mb-3">Agen Natini (Subcon)</h5>
+                            
+                            <div class="d-flex align-items-start gap-2 mb-2">
+                                <span style="font-size: 1.1rem;">🛍️</span>
+                                <div>
+                                    <small class="text-muted d-block font-monospace" style="font-size: 0.65rem;">PRODUK YANG DIJUAL</small>
+                                    <span class="text-dark small fw-semibold umkm-produk-text">Warung kelontong penyedia kebutuhan pokok harian sekaligus melayani keagenan atau jasa bayar tagihan.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <hr class="text-muted opacity-25 my-2">
+                            <div class="umkm-meta-info mb-3 d-flex align-items-center gap-2">
+                                <span>📍</span>
+                                <span class="small text-muted"><strong>Alamat:</strong> <span class="umkm-alamat-text">Dusun Menggora RT 03 / RW 03</span></span>
+                            </div>
+                            <button class="btn btn-umkm-detail w-100 text-center" onclick="showUmkmDetail('Agen Natini (Subcon)', 'Kelontong & Jasa Agen', 'Warung kelontong penyedia kebutuhan pokok harian serta melayani loket pembayaran digital agen subcon (pembayaran listrik, BPJS, PDAM, pulsa internet, transfer uang, dan tagihan bulanan).', 'Dusun Menggora RT 03 / RW 03, Desa Tanjungtirta, Kec. Punggelan, Banjarnegara')">Lihat Detail ⚡</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="noUmkmMessage" class="text-center py-5 d-none">
+            <span style="font-size: 50px;">📂</span>
+            <h5 class="fw-bold text-muted mt-3">UMKM tidak ditemukan</h5>
+            <p class="text-muted small">Coba masukkan kata kunci pencarian yang lain.</p>
+        </div>
+
+    </section>
+</div>
+
+<!-- ========================================================= -->
+<!-- MODAL DETAIL POP-UP (BAWAN ASLI KAMU)                      -->
+<!-- ========================================================= -->
+<div class="modal fade" id="umkmDetailModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header modal-header-gradient">
+                <h5 class="modal-title fw-bold" id="modalUmkmName">Nama UMKM</h5>
+                <button type="button" class="btn-close modal-close-btn btn-close-white" data-bs-shadow="none" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body modal-body-custom">
+                <div class="mb-3">
+                    <span class="badge" id="modalUmkmType" style="background: var(--accent-light); color: var(--primary); font-weight: 700; padding: 6px 14px; border-radius: 30px;">Kategori</span>
+                </div>
+                <div class="mb-4">
+                    <h6 class="fw-bold text-dark mb-2">📑 Deskripsi Usaha:</h6>
+                    <p class="text-muted small mb-0 text-start" id="modalUmkmDesc">Detail penjelasan isi usaha umkm.</p>
+                </div>
+                <hr class="text-muted opacity-25">
+                <div class="d-flex align-items-start gap-2 text-start mt-3">
+                    <span class="fs-5">📍</span>
+                    <div>
+                        <h6 class="fw-bold text-dark mb-1">Alamat Lengkap Usaha:</h6>
+                        <p class="text-muted small mb-0" id="modalUmkmAddress">Alamat detail RT/RW Dusun.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ========================================================= -->
+<!-- LOGIKA PENYARINGAN KHUSUS UNTUK METODE "searchUMKM()"      -->
+<!-- ========================================================= -->
+<script>
+function searchUMKM() {
+    let input = document.getElementById('umkmSearchInput');
+    let filter = input.value.toLowerCase().trim();
+    let container = document.getElementById('umkmContainer');
+    let cards = container.getElementsByClassName('umkm-card-item');
+    let anyVisible = false;
+
+    for (let i = 0; i < cards.length; i++) {
+        let name = cards[i].querySelector('.umkm-name').textContent.toLowerCase();
+        let badge = cards[i].querySelector('.umkm-badge-type').textContent.toLowerCase();
+        let produk = cards[i].querySelector('.umkm-produk-text').textContent.toLowerCase();
+        let alamat = cards[i].querySelector('.umkm-alamat-text').textContent.toLowerCase();
+
+        if (name.includes(filter) || badge.includes(filter) || produk.includes(filter) || alamat.includes(filter)) {
+            cards[i].style.setProperty('display', '', 'important');
+            anyVisible = true;
+        } else {
+            cards[i].style.setProperty('display', 'none', 'important');
+        }
+    }
+
+    let noMessage = document.getElementById('noUmkmMessage');
+    if (anyVisible) {
+        noMessage.classList.add('d-none');
+    } else {
+        noMessage.classList.remove('d-none');
+    }
+}
+</script>
+
+    <div id="galeri" class="page-section">
+        <section class="gallery">
+            <h2 class="section-title">Galeri Wisata</h2>
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="p-3 pb-0"><img src="desa/gr.jpg" class="img-fluid"></div>
+                        <div class="card-body">
+                            <h5 class="fw-bold" style="color:var(--primary);">Kegiatan Warga 🌾</h5>
+                            <p class="text-muted small mb-0">Dokumentasi tradisi gotong royong warga desa.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="p-3 pb-0">
+                            <video controls autoplay muted loop style="border-radius: 20px;">
+                                <source src="desa/vdio.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="fw-bold" style="color:var(--primary);">Pemandangan Desa 🎬</h5>
+                            <p class="text-muted small mb-0">Keindahan alam pedesaan dengan bentang jalanan yang asri.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="p-3 pb-0"><img src="desa/PLTM.jpg" class="img-fluid"></div>
+                        <div class="card-body">
+                            <h5 class="fw-bold" style="color:var(--primary);">Pembangunan PLTM 🌊</h5>
+                            <p class="text-muted small mb-0">PLTM (Pembangkit Listrik Tenaga Minihidro) Tanjungtirta adalah pembangkit listrik skala kecil yang memanfaatkan aliran sungai alami di Desa Tanjungtirta untuk menghasilkan energi bersih ramah lingkungan. Fasilitas yang dikelola oleh PT Maji Biru Pusaka (Tamaris Hydro Group) ini telah beroperasi sejak tahun 2020 untuk menyuplai pasokan listrik ramah lingkungan langsung ke jaringan PLN.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title mt-5">Peta Geografis</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card overflow-hidden" style="border: 4px solid white;">
+                        <iframe src="https://www.google.com/maps?q=Kecamatan+Punggelan+Kabupaten+Banjarnegara+Jawa+Tengah&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold" style="color:var(--primary);">Peta Lokasi Desa</h5>
+                            <p class="text-muted small mb-0">Kecamatan Punggelan, Kabupaten Banjarnegara, Provinsi Jawa Tengah</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="kontak" class="page-section">
+        <section>
+            <h2 class="section-title">Hubungi Kami</h2>
+            <div class="row g-4 align-items-stretch">
+                
+                <div class="col-lg-5">
+                    <div class="contact-info-card d-flex flex-column justify-content-center">
+                        <div>
+                            <h4 class="fw-bold mb-3" style="color: var(--secondary);">Kantor Pemerintah Desa</h4>
+                            <p class="text-white-50 small mb-4">Silakan hubungi kami melalui surat elektronik resmi atau kunjungi kantor pelayanan utama kami.</p>
+                            
+                            <div class="contact-item-row">
+                                <div class="contact-icon-sphere">📍</div>
+                                <div>
+                                    <h6 class="fw-bold mb-1 text-white">Alamat Kantor</h6>
+                                    <p class="text-white-50 small mb-0">Desa Tanjungtirta, Kec. Punggelan, Kabupaten Banjarnegara, Jawa Tengah, Indonesia.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item-row mt-4">
+                                <div class="contact-icon-sphere">✉️</div>
+                                <div>
+                                    <h6 class="fw-bold mb-1 text-white">Email Resmi</h6>
+                                    <p class="text-white-50 small mb-0">info@tanjungtirta.desa.id</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7">
+                    <div class="modern-complaint-form">
+                        <h4 class="fw-bold mb-2" style="color: var(--dark);">💌 Layanan Aspirasi & Aduan</h4>
+                        <p class="text-muted small mb-4">Punya saran perkembangan atau pengaduan umum? Kirimkan laporan langsung ke database desa.</p>
+                        
+                        <form action="https://formspree.io/f/xkoevevq" method="POST">
+                            <div class="mb-3">
+                                <label class="form-label">Nama Lengkap</label>
+                                <input type="text" name="Nama" class="form-control" placeholder="Contoh: Budi Santoso" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Alamat Email</label>
+                                <input type="email" name="Email" class="form-control" placeholder="budi@example.com" required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label">Isi Pesan / Laporan</label>
+                                <textarea name="Pesan" class="form-control" rows="5" placeholder="Tuliskan detail laporan di sini..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn-gradient-submit">Kirim Laporan ⚡</button>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </div>
+
+</div>
+
+<footer>
+    <p class="mb-0">© 2026 Website Resmi Desa Tanjungtirta | Built with Energy ⚡</p>
+</footer>
+
+<script>
+// Fungsi Navigasi Halaman Utama
+function switchSection(sectionId) {
+    const sections = document.querySelectorAll('.page-section');
+    sections.forEach(section => {
+        section.classList.remove('active-section');
+    });
+
+    const targetSection = document.getElementById(sectionId);
+    if(targetSection) {
+        targetSection.classList.add('active-section');
+    }
+
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if(link.getAttribute('onclick').includes(sectionId)) {
+            link.classList.add('active');
+        }
+    });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Fungsi Navigasi Tab Grafik Statistik
+function toggleStatPane(paneId, button) {
+    const panes = document.querySelectorAll('.stat-view-pane');
+    panes.forEach(pane => pane.classList.remove('active-pane'));
+    
+    document.getElementById(paneId).classList.add('active-pane');
+    
+    const buttons = document.querySelectorAll('.btn-toggle-stat');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+}
+
+// JAVASCRIPT LIVE SEARCH UNTUK MENCARI UMKM
+function searchUMKM() {
+    const input = document.getElementById('umkmSearchInput').value.toLowerCase();
+    const cards = document.getElementsByClassName('umkm-card-item');
+    let foundCounter = 0;
+
+    for (let i = 0; i < cards.length; i++) {
+        const nameText = cards[i].querySelector('.umkm-name').innerText.toLowerCase();
+        const fullText = cards[i].innerText.toLowerCase();
+
+        if (nameText.includes(input) || fullText.includes(input)) {
+            cards[i].style.display = "";
+            foundCounter++;
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+
+    const noMessage = document.getElementById('noUmkmMessage');
+    if (foundCounter === 0) {
+        noMessage.classList.remove('d-none');
+    } else {
+        noMessage.classList.add('d-none');
+    }
+}
+
+// JAVASCRIPT INTERAKSI MODAL DETAIL UMKM
+function showUmkmDetail(name, type, desc, address) {
+    document.getElementById('modalUmkmName').innerText = name;
+    document.getElementById('modalUmkmType').innerText = "Jenis Usaha: " + type;
+    document.getElementById('modalUmkmDesc').innerText = desc;
+    document.getElementById('modalUmkmAddress').innerText = address;
+
+    const myModal = new bootstrap.Modal(document.getElementById('umkmDetailModal'));
+    myModal.show();
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
 </html>
